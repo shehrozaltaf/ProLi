@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * User: shahroz.khan
  * Date: 23/10/2018
  * Time: 10:11 AM
+ * @property  encryption
  */
 class Login extends CI_Controller
 {
@@ -42,8 +43,10 @@ class Login extends CI_Controller
             $username = $this->input->post('UserName');
             $Password = $this->input->post('Password');
             $result = $Login->validate($username, $Password);
+
             if (count($result) == 1) {
-                if ($Password === $this->encrypt->decode($result[0]->Password)) {
+//                if ($Password === $this->encrypt->decode($result[0]->Password)) {
+                if ($Password === $result[0]->Password) {
                     $data = array(
                         'idUser' => $result[0]->idUser,
                         'UserName' => $result[0]->UserName,

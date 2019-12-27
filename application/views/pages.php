@@ -271,7 +271,7 @@ if (!isset($permission[0]->CanAdd) || $permission[0]->CanAdd == 1) {
             return false;
         }
         if (flag === 0) {
-            CallAjax('<?= base_url('Pages/addData')?>', data, 'POST', function (res) {
+            CallAjax('<?= base_url('index.php/Pages/addData')?>', data, 'POST', function (res) {
                 console.log(res);
                 if (res != '' && JSON.parse(res).length > 0) {
                     var response = JSON.parse(res);
@@ -293,7 +293,7 @@ if (!isset($permission[0]->CanAdd) || $permission[0]->CanAdd == 1) {
         var data = {};
         data['id'] = $(obj).attr('data-Pageid');
         if (data['id'] != '' && data['id'] != undefined) {
-            CallAjax('<?= base_url('Pages/getEdit')?>', data, 'POST', function (result) {
+            CallAjax('<?= base_url('index.php/Pages/getEdit')?>', data, 'POST', function (result) {
                 if (result != '' && JSON.parse(result).length > 0) {
                     var a = JSON.parse(result);
                     console.log(a);
@@ -346,7 +346,7 @@ if (!isset($permission[0]->CanAdd) || $permission[0]->CanAdd == 1) {
             return false;
         }
         if (flag === 0) {
-            CallAjax('<?= base_url('Pages/editData')?>', data, 'POST', function (res) {
+            CallAjax('<?= base_url('index.php/Pages/editData')?>', data, 'POST', function (res) {
                 if (res == 1) {
                     hideModal('editModal');
                     notificatonShow('Successfully Edited', 'success');
@@ -374,7 +374,7 @@ if (!isset($permission[0]->CanAdd) || $permission[0]->CanAdd == 1) {
             return false;
         }
         if (flag === 0) {
-            CallAjax('<?= base_url('Pages/deleteData')?>', data, 'POST', function (res) {
+            CallAjax('<?= base_url('index.php/Pages/deleteData')?>', data, 'POST', function (res) {
                 if (res == 1) {
                     hideModal('deleteModal');
                     notificatonShow('Successfully Deleted', 'success');

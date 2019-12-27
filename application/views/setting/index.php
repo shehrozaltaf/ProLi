@@ -51,7 +51,7 @@
                              <td>' . $data->GroupName . '</td>  
                              <td >  ';
                                     if (isset($permission[0]->CanEdit) && $permission[0]->CanEdit == 1) {
-                                        $td .= '<a href="' . base_url('setting/edit/' . $data->idGroup) . '"  data-idGroup="' . $data->idGroup . '"><i class="md-icon material-icons">edit</i></a>';
+                                        $td .= '<a href="' . base_url('index.php/setting/edit/' . $data->idGroup) . '"  data-idGroup="' . $data->idGroup . '"><i class="md-icon material-icons">edit</i></a>';
                                     }
 
                                     if (isset($permission[0]->CanDelete) && $permission[0]->CanDelete == 1) {
@@ -77,7 +77,7 @@
 if (isset($permission[0]->CanAdd) && $permission[0]->CanAdd == 1) {
     echo '<div class="md-fab-wrapper">
     <a class="md-fab md-fab-accent md-fab-wave-light waves-effect waves-button waves-light"
-       href="' . base_url('setting/add') . '" id="invoice_add">
+       href="' . base_url('index.php/setting/add') . '" id="invoice_add">
         <i class="material-icons">add</i>
     </a>
 </div>';
@@ -120,7 +120,7 @@ if (isset($permission[0]->CanAdd) && $permission[0]->CanAdd == 1) {
         var data = {};
         data['idGroup'] = $('#delete_idGroup').val();
         if (data['idGroup']) {
-            CallAjax('<?php echo base_url() . 'Setting/Delete' ?>', data, 'POST', function (Result) {
+            CallAjax('<?php echo base_url() . 'index.php/Setting/Delete' ?>', data, 'POST', function (Result) {
                 altair_helpers.content_preloader_show();
                 if (Result == 1) {
                     $('#btn-Delete').css('display', 'none');

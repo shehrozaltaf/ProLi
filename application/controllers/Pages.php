@@ -61,7 +61,7 @@ class Pages extends CI_Controller
             $MPages = new MPages();
             $result = $MPages->checkPageURL($insertArr['page_url']);
             if (count($result) <= 0) {
-                $InserData = $Custom->Insert($insertArr, 'idPage', 'Pages', 'Y');
+                $InserData = $Custom->Insert($insertArr, 'idPage', 'Pages', 'N');
                 if ($InserData) {
                     $getAllGroups = $Msetting->getAllGroups();
                     foreach ($getAllGroups as $groups) {

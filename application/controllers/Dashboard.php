@@ -23,7 +23,7 @@ class Dashboard extends CI_Controller
     {
         $this->load->view('include/header');
         $this->load->view('include/nav');
-        $this->load->view('dashboard');
+        $this->load->view('products');
         $this->load->view('include/footer');
     }
 
@@ -37,7 +37,7 @@ class Dashboard extends CI_Controller
         $getDataRights = $Msetting->getFormRights($idGroup, '1', '');
         if (isset($getDataRights) && count($getDataRights) >= 1) {
             foreach ($getDataRights as $pages) {
-                $Menu .= '<li><a href="' . base_url($pages->page_url) . '">' . $pages->page_name . '</a></li>';
+                $Menu .= '<li><a href="' . base_url('index.php/'.$pages->page_url) . '">' . $pages->page_name . '</a></li>';
             }
         } else {
             $Menu = '';

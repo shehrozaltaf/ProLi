@@ -68,17 +68,16 @@ class Users extends CI_Controller
             $response = array(array('Invalid User Name & Password'), array('danger'));
         } else {
             $MUsers = new MUsers();
-            $Password = $this->encrypt->encode($insertArr['Password']);
-            $insertArr['Password'] = $Password;
+//            $Password = $this->encrypt->encode($insertArr['Password']);
+//            $insertArr['Password'] = $Password;
             $result = $MUsers->checkUsername($insertArr['UserName']);
             if (count($result) <= 0) {
-                $InserData = $Custom->Insert($insertArr, 'idUser', 'users', 'Y');
+                $InserData = $Custom->Insert($insertArr, 'idUsers', 'users', 'N');
                 if ($InserData) {
                     $response = array('Inserted Successfully', 'success');
                 } else {
                     $response = array('Something went wrong', 'error');
                 }
-
             } else {
                 $response = array('User Name already exist', 'danger');
             }

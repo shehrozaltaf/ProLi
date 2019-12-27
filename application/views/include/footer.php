@@ -32,7 +32,7 @@
 <script>
 
     function logout() {
-        CallAjax('<?= base_url('Dashboard/getLogout')?>', {}, 'POST', function (res) {
+        CallAjax('<?= base_url('index.php/Dashboard/getLogout')?>', {}, 'POST', function (res) {
             window.location.href = "<?php echo base_url() ?>";
         });
     }
@@ -42,7 +42,7 @@
     });
 
     function getMenu() {
-        CallAjax('<?php echo base_url('Dashboard/getMenuData') ?>', [], "POST", function (Result) {
+        CallAjax('<?php echo base_url('index.php/Dashboard/getMenuData') ?>', [], "POST", function (Result) {
             $('#sideBarMenu').html(Result);
             setTimeout(function () {
                 altair_main_sidebar.init();

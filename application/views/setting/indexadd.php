@@ -52,7 +52,7 @@
         var GroupName = $('#GroupName').val();
         if (GroupName != '') {
             data['GroupName'] = GroupName;
-            CallAjax("<?php echo base_url('Setting/Insert') ?>", data, "POST", function (Result) {
+            CallAjax("<?php echo base_url('index.php/Setting/Insert') ?>", data, "POST", function (Result) {
                 altair_helpers.content_preloader_show();
                 if (Result == 2) {
                     $('#msgText').html('');
@@ -111,7 +111,7 @@
     function getFormGroupData() {
         var data = {};
         data['idGroup'] = $('#idGroup').val();
-        CallAjax("<?php echo base_url() . 'Setting/getFormGroupData' ?>", data, "POST", function (Result) {
+        CallAjax("<?php echo base_url() . 'index.php/Setting/getFormGroupData' ?>", data, "POST", function (Result) {
             console.log(Result);
             var a = JSON.parse(Result);
             var items = "";
@@ -262,7 +262,7 @@
             data[$(count[i]).attr('name')] = ($(count[i]).is(':checked')) ? true : false;
             arr[i] = data;
         }
-        var url = "<?php echo base_url() . 'Setting/fgAdd' ?>";
+        var url = "<?php echo base_url() . 'index.php/Setting/fgAdd' ?>";
         CallAjax(url, arr, "POST", function (data) {
             console.log(data);
             if (data) {

@@ -20,15 +20,16 @@ class Custom extends CI_Model
         }
     }
 
-    function Insert($Data, $idReturn, $table)
+    function Insert($Data, $idReturn, $table,$getLastId='N')
     {
         $insert = $this->db->insert($table, $Data);
         if ($insert) {
-            $id = $Data[$idReturn];
-            if ($id == '') {
+            if ($getLastId === 'Y') {
+                $returnValue = $this->db->insert_id();
+            } elseif (!isset($Data[$idReturn]) || $Data[$idReturn] == '') {
                 $returnValue = 1;
             } else {
-                $returnValue = $id;
+                $returnValue = $Data[$idReturn];
             }
             return $returnValue;
         } else {

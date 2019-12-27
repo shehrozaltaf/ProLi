@@ -15,7 +15,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?= base_url() ?>assets/img/favicon.ico"/>
     <link rel="icon" type="image/ico" href="<?= base_url() ?>assets/img/favicon.ico"/>
 
-    <title>Aga Khan - Portal</title>
+    <title>Product Listing</title>
 
 
     <!-- uikit -->

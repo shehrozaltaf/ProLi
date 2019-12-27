@@ -1,0 +1,5 @@
+- user category wise products (user can QA the category) 
+- divide products into users
+- parent categories & sub categories
+- add categories into levels
+- manufacture is always 1

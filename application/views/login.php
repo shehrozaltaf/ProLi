@@ -1,23 +1,18 @@
 <!doctype html>
 <!--[if lte IE 9]>
-<html class="lte-ie9" lang="en"> <![endif]-->
+<html class="lte-ie9" lang="en">
+<![endif]-->
 <!--[if gt IE 9]><!-->
 <html lang="en"> <!--<![endif]-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Remove Tap Highlight on Windows Phone IE -->
     <meta name="msapplication-tap-highlight" content="no"/>
-
     <link rel="shortcut icon" type="image/x-icon" href="<?= base_url() ?>assets/img/favicon.ico"/>
     <link rel="icon" type="image/ico" href="<?= base_url() ?>assets/img/favicon.ico"/>
-
-
-    <title>Aga Khan - Lab System</title>
-
+    <title>Product Listing</title>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
-
     <!-- uikit -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/bower_components/uikit/css/uikit.almost-flat.min.css"/>
     <!-- altair admin login page -->
@@ -33,8 +28,7 @@
     <div class="md-card" id="login_card">
         <div class="md-card-content large-padding" id="login_form">
             <div class="login_heading">
-                <div class="user_avatar"></div>
-                <h2>AGA KHAN - LAB SYSTEM</h2>
+                <h2>Product Listing</h2>
             </div>
             <form>
                 <div id="msg" style="display: none;" class="uk-alert" data-uk-alert>
@@ -161,7 +155,7 @@
             CallAjax('<?= base_url('index.php/Login/getLogin')?>', data, 'POST', function (res) {
                 if (res == 1) {
                     setTimeout(function () {
-                        window.location.href = "<?php echo base_url() . 'dashboard' ?>";
+                        window.location.href = "<?php echo base_url() . 'index.php/dashboard' ?>";
                     }, 2000);
                     returnMsg('msgText', 'Success', 'uk-alert-success', 'msg');
                 } else if (res == 2) {

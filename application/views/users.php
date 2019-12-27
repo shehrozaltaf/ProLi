@@ -294,7 +294,7 @@ if (isset($permission[0]->CanAdd) && $permission[0]->CanAdd == 1) {
             return false;
         }
         if (flag === 0) {
-            CallAjax('<?= base_url('Users/addData')?>', data, 'POST', function (res) {
+            CallAjax('<?= base_url('index.php/Users/addData')?>', data, 'POST', function (res) {
                 console.log(res);
                 if (res != '' && JSON.parse(res).length > 0) {
                     var response = JSON.parse(res);
@@ -316,7 +316,7 @@ if (isset($permission[0]->CanAdd) && $permission[0]->CanAdd == 1) {
         var data = {};
         data['id'] = $(obj).attr('data-Userid');
         if (data['id'] != '' && data['id'] != undefined) {
-            CallAjax('<?= base_url('Users/getEdit')?>', data, 'POST', function (result) {
+            CallAjax('<?= base_url('index.php/Users/getEdit')?>', data, 'POST', function (result) {
                 if (result != '' && JSON.parse(result).length > 0) {
                     var a = JSON.parse(result);
                     console.log(a);
@@ -378,7 +378,7 @@ if (isset($permission[0]->CanAdd) && $permission[0]->CanAdd == 1) {
             return false;
         }
         if (flag === 0) {
-            CallAjax('<?= base_url('Users/editData')?>', data, 'POST', function (res) {
+            CallAjax('<?= base_url('index.php/Users/editData')?>', data, 'POST', function (res) {
                 if (res == 1) {
                     hideModal('editModal');
                     notificatonShow('Successfully Edited', 'success');
@@ -406,7 +406,7 @@ if (isset($permission[0]->CanAdd) && $permission[0]->CanAdd == 1) {
             return false;
         }
         if (flag === 0) {
-            CallAjax('<?= base_url('Users/deleteData')?>', data, 'POST', function (res) {
+            CallAjax('<?= base_url('index.php/Users/deleteData')?>', data, 'POST', function (res) {
                 if (res == 1) {
                     hideModal('deleteModal');
                     notificatonShow('Successfully Deleted', 'success');

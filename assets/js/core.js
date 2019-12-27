@@ -30,6 +30,7 @@ function hideModal(id) {
 }
 
 function notificatonShow(message, statusClass) {
+    altair_helpers.content_preloader_hide();
     $('#notificationDiv').html('<div class="uk-notify-message uk-notify-message-' + statusClass + '" style="opacity: 1; margin-top: 0px; margin-bottom: 10px;">' +
         '        <a class="uk-close"></a>' +
         '        <div>' +
@@ -79,6 +80,8 @@ function validateNum(phoneNoDiv) {
     });
 }
 function returnMsg(divTextId, TextMsg, divTextclass, divId) {
+    $('#' + divId).removeClass('uk-alert-danger');
+    $('#' + divId).removeClass('uk-alert-success');
     altair_helpers.content_preloader_hide();
     $('#' + divTextId).html('').html(TextMsg);
     $('#' + divId).addClass(divTextclass).css('display', 'block');
